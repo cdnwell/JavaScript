@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while</title>
+    
+    <style>
+        .red{
+            color: red;
+        }
+        .blue{
+            color: blue;;
+        }
+    </style>
+    <script>
+        //숫자 1~10까지 출력하느 반복문
+        //숫자가 짝수면 글자색을 파랑색, 홀수면 글자색을 빨간색으로 숫자
+        //출력
+       
+        // while(num <= 10){
+        //     if(num%2 == 0){
+        //         document.write("<p class='blue'>",num,"</p>");
+        //     }else{
+        //         document.write("<p class='red'>",num,"</p>");
+        //     }
+        //     num++;
+        // }
+        // var num = 1;
+        // while(num <= 10){
+        //     var tag = num%2 ==0 ? "<p class='blue'>" : "<p class='red'>";
+        //     document.write(num,"</p>");
+        //     document.write(tag);
+        //     num++;
+        // }
+        // 백틱을 이용한 태그 조립
+        var num = 1;
+        while(num <= 10){
+            // ${ } <- 달러, 중괄호 = 중괄호에 변수를 넣어주겠다.
+            var tag = num%2 ==0 ? `<p clss ="blue">${num}</p>`: `<p class="red">${num}</p>`;
+            document.write(tag);
+            num++;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

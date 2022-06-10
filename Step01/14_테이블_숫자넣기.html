@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            border: 1px solid black;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        document.write(`<table>`);
+        for(i=0;i<=4;i++){
+            document.write(`<tr>`);
+            for(j=1;j<=5;j++){
+                document.write(`<td>${j+5*i}</td>`);
+            }
+            document.write(`</tr>`);
+        }
+        document.write(`</table>`);
+
+
+        document.write(`<table><tr>`);
+        
+        for(i=1;i<=25;i++){
+            if(i%5==1){
+                document.write()
+            }
+            document.write(`<td>${i}</td>`);
+        }
+        document.write(`</tr></table>`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

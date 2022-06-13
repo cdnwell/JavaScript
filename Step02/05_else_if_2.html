@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if문</title>
+    <style>
+        .skyblue{
+            color: skyblue;
+        }
+        .yellowgreen{
+            color: yellowgreen;
+        }
+        .orange{
+            color: orange;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+    <script>
+        /*
+            미세먼지 수치를 받아서 수치에 따라 글자색을 바꾸기
+            0~30 좋음 --> 글자색 skyblue
+            31~80 보통 --> 글자색 yellowgreen
+            81~150 나쁨 --> 글자색 orange
+            151~ 매우 나쁨 --> 글자색 red
+        */
+        // let num = Number(prompt('미세먼지 수치를 입력해주세요'));
+
+        // if(num>=0 && num <= 30){
+        //     document.write(`<p class="skyblue"> 좋음`);
+        // }else if(num<=80){
+        //     document.write(`<p class="yellowgreen"> 좋음`);
+        // }else if(num<=150){
+        //     document.write(`<p class="orange"> 나쁨`);
+        // }else{
+        //     document.write(`<p class="red"> 매우 나쁨`);
+        // }
+        // document.write(`</p>`);
+
+        let mise = Number(prompt('미세먼지 수치를 입력하세요','0'));
+        if(mise <= 30)
+            document.write(`<p style="color:skyblue;">미세먼지 수치 좋음</p>`);
+        else if(mise <= 80)
+            document.write(`<p style="color:yellowgreen;">미세먼지 수치 보통</p>`);
+        else if(mise <= 150)
+            document.write(`<p style="color:orange;">미세먼지 수치 나쁨</p>`);
+        else
+            document.write(`<p style="color:red;">미세먼지 수치 매우나쁨</p>`);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

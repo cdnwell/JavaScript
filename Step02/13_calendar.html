@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calendar</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            
+        }
+        th,td{
+            border: 1px solid black;
+        }
+        td{
+            text-align:right;
+            vertical-align: top;
+            width: 100px;
+            height: 100px;
+        }
+        th:first-child, td:first-child{
+            color: red;
+        }
+        th:last-child, td:last-child{
+            color: blue;
+        }
+        .waterMark{
+            color: gray !important;
+        }
+        
+    </style>
+    <script>
+        document.write(`<h2>6월</h2>`);
+        document.write(`<table>`);
+        
+        document.write(`<tr><th>일</th>`);
+        document.write(`<th>월</th>`);
+        document.write(`<th>화</th>`);
+        document.write(`<th>수</th>`);
+        document.write(`<th>목</th>`);
+        document.write(`<th>금</th>`);
+        document.write(`<th>토</th></tr>`);
+        
+        let num = new Date(2022,4,29);
+
+        for(i=1;i<=5;i++){
+            document.write(`<tr>`);
+            for(j=1;j<=7;j++){
+                if(num.getDate()==29 && num.getDay()==0){
+                    document.write(`<td class="waterMark">`);
+                }else if(num.getDate()==30 && num.getDay()==1){
+                    document.write(`<td class="waterMark">`);
+                }else if(num.getDate()==31 && num.getDay()==2){
+                    document.write(`<td class="waterMark">`);
+                }else if(num.getDate()==1 && num.getDay()==5){
+                    document.write(`<td class="waterMark">`);
+                }else if(num.getDate()==2 && num.getDay()==6){
+                    document.write(`<td class="waterMark">`);
+                }else{
+                    document.write(`<td>`);
+                }
+                document.write(`${num.getDate()}</td>`);
+                num.setDate(num.getDate()+1);
+            }
+            document.write(`</tr>`);
+        }
+
+        document.write(`</table>`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

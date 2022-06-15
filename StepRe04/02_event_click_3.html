@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = () => {
+      var google = document.getElementsByClassName("google")[0];
+
+      google.onclick = (e) => {
+        e.preventDefault();
+      }
+      
+      var naver = document.querySelector(".naver")
+
+      naver.onclick = () => {
+        alert('네이버로 이동합니다.');
+        return false;
+      }
+    }
+  </script>
+</head>
+<body>
+  <a href="https://www.google.com" class="google">구글로 이동</a>
+  <a href="https://www.naver.com" class="naver">네이버로 이동</a>
+</body>
+
+</html>

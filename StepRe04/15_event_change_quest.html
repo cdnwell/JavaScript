@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            var sel = document.querySelector('select');
+            var span = document.querySelector('span');
+
+            sel.onchange = () =>{
+                if(sel.value == 4)
+                    span.innerHTML=`<input type="text">`;
+                else
+                    span.innerHTML=``;
+            }
+            // 아래는 풀이, 위와 같이 동작했다. this는 같은 객체를 가리키고 
+            // 직접 이름을 써줘도 된다.
+            // host.onchange = function () {
+            //     if (this.value == 4)
+            //         // 동적엘리먼트 이벤트 처리 dhost에는 바로 다음에 처리를 해줘야 
+            //         // 컴퓨터 안터짐
+            //         area.innerHTML = `<input type="text" id="dhost">`;
+            //     else
+            //         area.innerHTML = ``;
+            // }
+        }
+    </script>
+</head>
+<body>
+    <input type="text">@
+    <select class="host">
+        <option value="0">gmail.com</option>
+        <option value="1">naver.com</option>
+        <option value="2">hanmail.net</option>
+        <option value="3">nate.com</option>
+        <option value="4">직접입력</option>
+    </select>
+    <span></span>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            display: flex;
+            flex-direction: column;
+            width: 1200px;
+            margin: 100px auto;
+        }
+        ul{
+            list-style-type: none;
+        }
+        li{
+            width: 240px;
+        }
+
+        #main_menu{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            box-sizing: border-box;
+        }
+        #main_menu a:link, #main_menu a:visited{
+            width: 100%;
+            display: inline-block;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            border: 1px black solid;
+            padding: 20px 0;
+            box-sizing: border-box;
+        }
+
+
+        #sub_menu_container{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            box-sizing: border-box;
+            
+
+            height: 0;
+            overflow: hidden;
+            transition-property: all;
+            transition-duration: 1s;
+        }
+        #sub_menu_container a:link, #sub_menu_container a:visited{
+            width: 100%;
+            text-decoration: none;
+            font-size : 0.8em;
+            display: inline-block;
+            color: blueviolet;
+            text-align: center;
+            box-sizing: border-box;
+            border: 1px solid black;
+            padding: 20px 0;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            var nav = document.querySelector('nav');
+            var sub_menu = document.querySelector('#sub_menu_container');
+
+            var sub_menu_height = sub_menu.scrollHeight + sub_menu.offsetHeight;
+            sub_menu_height += "px";
+
+            nav.onmouseleave = () => {
+                sub_menu.style.height = 0;
+            }
+
+            nav.onmouseover = () => {
+                sub_menu.style.height = sub_menu_height;
+            }
+
+            var anchor = document.querySelectorAll('.sub_menu a');
+            for(i=0;i<anchor.length;i++){
+                anchor[i].onclick = () => {
+                    sub_menu.style.height = 0;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <ul id="main_menu">
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            <li><a href="#">메뉴5</a></li>
+        </ul>
+        <div id="sub_menu_container">
+            <ul class="sub_menu">
+                <li><a href="#">메뉴1-1</a></li>
+                <li><a href="#">메뉴1-2</a></li>
+                <li><a href="#">메뉴1-3</a></li>
+                <li><a href="#">메뉴1-4</a></li>
+                <li><a href="#">메뉴1-5</a></li>
+            </ul>
+            <ul class="sub_menu">
+                <li><a href="#">메뉴2-1</a></li>
+                <li><a href="#">메뉴2-2</a></li>
+                <li><a href="#">메뉴2-3</a></li>
+                <li><a href="#">메뉴2-4</a></li>
+                <li><a href="#">메뉴2-5</a></li>
+            </ul>
+            <ul class="sub_menu">
+                <li><a href="#">메뉴3-1</a></li>
+                <li><a href="#">메뉴3-2</a></li>
+                <li><a href="#">메뉴3-3</a></li>
+                <li><a href="#">메뉴3-4</a></li>
+                <li><a href="#">메뉴3-5</a></li>
+            </ul>
+            <ul class="sub_menu">
+                <li><a href="#">메뉴4-1</a></li>
+                <li><a href="#">메뉴4-2</a></li>
+                <li><a href="#">메뉴4-3</a></li>
+                <li><a href="#">메뉴4-4</a></li>
+                <li><a href="#">메뉴4-5</a></li>
+            </ul>
+            <ul class="sub_menu">
+                <li><a href="#">메뉴5-1</a></li>
+                <li><a href="#">메뉴5-2</a></li>
+                <li><a href="#">메뉴5-3</a></li>
+                <li><a href="#">메뉴5-4</a></li>
+                <li><a href="#">메뉴5-5</a></li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

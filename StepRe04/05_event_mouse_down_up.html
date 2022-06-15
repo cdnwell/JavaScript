@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 마우스를 누르면 p태그 안에 각 버튼의(지정된 숫자) 숫자와 누름, 뗌을 출력
+    window.onload = function(){
+      var button = document.getElementsByTagName("button")[0];
+      var p = document.getElementsByTagName("p")[0];
+
+      button.onmousedown = (e) => {
+        p.innerHTML = e.button + "누름";
+      }
+      button.onmouseup = function(e){
+        p.innerHTML = e.button + "뗌";
+      }
+    }
+  </script>
+</head>
+<body>
+  <button>버튼</button>
+  <p></p>
+</body>
+</html>

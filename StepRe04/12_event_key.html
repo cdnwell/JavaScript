@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 키보드 버튼을 input txt 상자에 입력하면 아래 div에 키의 아스키
+    코드 값이 표시 된다. onkeydown, onkeyup, onkeypress-->
+    <script>
+        window.onload = () => {
+            var txt = document.querySelector('input');
+            var content = document.querySelector('div');
+
+            txt.onkeydown = (e) => {
+                console.log('현재 누른 키보드 키 :',e.keyCode);
+            }
+
+            txt.onkeyup = (e) => {
+                console.log('눌렀다 뗀 키 :',e.keyCode);
+            }
+
+            txt.onkeypress = (e) => {
+                console.log('누르고 있는 키 :',e.keyCode);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text">
+    <div></div>
+</body>
+</html>

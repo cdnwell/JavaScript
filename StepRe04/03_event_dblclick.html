@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = () => {
+      var title = document.querySelector('h1');
+
+      title.ondblclick = () => {
+        alert(title.innerHTML);
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>제목 태그</h1>
+</body>
+</html>

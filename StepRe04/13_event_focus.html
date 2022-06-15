@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            var txt = document.querySelector('input');
+            var anchor = document.querySelector('a');
+
+            txt.focus();
+            txt.onfocus = anchor.onfocus = function(){
+                this.style.backgroundColor = 'skyblue';
+            }
+
+            txt.onblur = anchor.onblur = function(){
+                this.style.background = 'none';
+                // this.style.background = none;
+                // none에 작은 따옴표를 붙이지 않으면 실행되지 않는다.
+                // 작은 따옴표 : '' single quotation marks
+                // 큰 따옴표 : "" double quotation marks
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text">
+    <br>
+    <a href="#">링크</a>
+</body>
+</html>

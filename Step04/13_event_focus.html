@@ -11,7 +11,7 @@
             var txt = document.querySelector('#txt');
             var a = document.querySelector('a');
             txt.focus();
-            // 람다식 안됨 - 버그인 듯
+            // 람다식은 this를 호환하지 않는다. mdn 사이트에 나와있음
             txt.onfocus = a.onfocus = function () {
                 // this = 자기 자신 객체, txt를 의미한다.
                 this.style.backgroundColor = 'skyblue';

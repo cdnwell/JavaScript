@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            var id = document.querySelector('#id');
+            var passwd = document.querySelector('#pass');
+            var btn = document.querySelector('#btn');
+
+            btn.onclick = () => {
+                if(id.value.length<6 || passwd.value.length<6){
+                    alert('id와 패스워드는 6글자 이상이어야 합니다.');
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="id"><br> 
+    <input type="password" id="pass"><br> 
+    <button id="btn">로그인</button>
+</body>
+</html>

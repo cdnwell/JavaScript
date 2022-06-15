@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <script>
+
+        function sum(a,b){
+            // return은 필요없으면 안써도 된다.
+            console.log(a,b);
+            // 데이터 안넣으면 undefined
+            return a+b;
+        }
+
+        document.write(sum(10,20),"<br>");
+        document.write(sum(),"<br>");
+
+        // function inputNumber(){
+        //     var n = Number(prompt('숫자 하나 입력','0'));
+        //     return n;
+        // }
+
+        // var로 썼을 때는 에러메시지 안뜸, 변수로 선언했던 것을
+        // 완전히 없앰 -> let
+        // let -> 지역변수 개념
+        function inputNumber(){
+            let n = Number(prompt('숫자 하나 입력','0'));
+            return n;
+        }
+
+        // 변수가 안들어가도 상관없다
+        document.write(inputNumber(100),"<br>");
+        // 정보가 없어서 아무값도 안나온다.
+        document.write(n,"<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

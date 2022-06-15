@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event quest</title>
+    <script>
+        window.onload = () => {
+            // var img = document.querySelector('#img');
+            // img.style.backgroundImage = url('img/non_check.png');
+            // let check = 0;
+            // img.onclick = () => {
+            //     if (check == 0) {
+            //         img.style.backgroundImage = url(img / non_check.png);
+            //     } else {
+            //         img.style.backgroundImage = url(img / check.png);
+
+            //     }
+            // }
+            var box = document.querySelector('#box');
+            var flag = false;
+            box.onclick = () => {
+                flag = !flag;
+                if (flag) {
+                    box.style.backgroundImage = 'url(img/check.png)';
+                } else {
+                    box.style.backgroundImage = 'url(img/non_check.png)';
+
+                }
+            }
+        }
+    </script>
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            background-image: url(img/non_check.png);
+            background-size: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+
+</html>

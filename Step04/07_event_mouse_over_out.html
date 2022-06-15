@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse event</title>
+    <style>
+        div {
+            padding: 30px;
+            border: 5px solid black;
+        }
+
+        p {
+            background-color: aquamarine;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            // var div = document.querySelector('#div');
+            var div = document.getElementById('div');
+            div.onmouseover = () => {
+                // 아래는 변수명에 -가 들어갈수 없으므로 안된다.
+                // div.style.border-color
+                // over = 마우스 올라갔을 때
+                div.style.borderColor = 'red';
+            }
+            div.onmouseout = () => {
+                // 마우스 밖으로 나갔을 때
+                div.style.borderColor = 'black';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div">
+        <p id="p">내용</p>
+    </div>
+</body>
+
+</html>

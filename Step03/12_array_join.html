@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array joing</title>
+    <script>
+        var arr = [1,2,34,true,'test',null,'123124',132];
+        // 데이터를 하나로 합쳐서 보내야 할 때 -> join
+        // join 배열의 내용을 하나의 문자열로 합치기, 특정 문자로
+        // 구분을 해준다.
+        document.write(arr.join('&'),"<br>");
+        var str = arr.join('&');
+
+        // split 함수로 문자열을 특정 문자열로 쪼개기 후에 배열로
+        // 관리하기
+        // 널은 표시되지 않음
+        document.write(str.split('&'),"<br>");
+        
+        // 백단이랑 연계했을 때 자주 씀, 반복문해서 태그 조립하는 것
+        // 많이 함, json을 쓰면 split 안써도 됨
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

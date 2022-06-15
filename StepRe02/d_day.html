@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>d_day</title>
+    <script>
+        let tday = new Date(2022,5,13);
+        let dday = new Date(2022,10,17);
+
+        let calDay = dday.getTime()-tday.getTime();
+        calDay /= (1000*60*60*24);
+
+        document.write(`Dday 까지 남은 일 : ${calDay}`);
+        document.write(`${tday}`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let var</title>
+    <script>
+        function var_test(){
+            var n = 10;
+            if(true){
+                var n = 20;
+                console.log('var_text : ',n);   //20
+            }
+            console.log('var_text : ',n);       //20
+        }
+        var_test();
+
+        // 지역변수 단위로 설정된 변수 n
+        // 전역변수 -> var
+        // 지역변수 -> let
+        // let은 지역변수만 되고 전역변수로는 등록되지 않는다.
+        function let_test(){
+            let n = 10;
+            if(true){
+                let n = 20;
+                console.log('let_text : ',n);   //20
+            }
+            console.log('let_text : ',n);       //10
+        }
+        let_test();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

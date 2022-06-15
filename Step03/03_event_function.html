@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event function</title>
+    <style>
+        #txt{
+            color: red;
+        }
+    </style>
+    <script>
+        function readText(){
+            // 모든 태그는 document에 있다고 보면 된다.
+            // getElement(s) s<- id는 하나만 있기 때문에 s가 안붙음
+            var txt = document.getElementById("txt");
+            // 입력한 내용 -> value에 있음
+
+            // property , attribute 차이 있음
+            // 최초에 넣어준 상태값 attribute 입력한 값이나 css 바꿀수 있다.
+            // 실시간으로 바꾼것 (실행중에 바뀌는 값들) property
+            // 시점에 따라 달라짐
+            // 빨간색 안뜬 이유 -> attribute
+            // 파란색 뜬 이유 -> property
+            txt.style.color = "blue";
+            console.log(txt.value,txt.id,txt.style.color);
+
+            // 요즘은 이렇게 안씀
+            // 옜날에는 html, css, js를 섞어서 썼는데 나중에 유지보수
+            // 할 때 문제가 생겨서 바뀜
+        }
+    </script>
+</head>
+<body>
+    <!-- onkeyup 키보드를 눌렀다가 뗀 순간 키보드키 누를 때마다 함수 실행 -->
+    <input type="text" id="txt" onkeyup="readText()">
+    <!-- onclick <- 이 태그를 클릭했을 때 readText()를 실행하겠다. -->
+    <button onclick="readText()">실행</button>
+</body>
+</html>

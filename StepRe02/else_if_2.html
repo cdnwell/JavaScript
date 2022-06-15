@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미세먼지와 글자색</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .orange{
+            color: orange;
+        }
+        .yellowgreen{
+            color: yellowgreen;
+        }
+        .skyblue{
+            color: skyblue;
+        }
+    </style>
+    <script>
+        let num = Number(prompt(`미세먼지 수치를 입력해주세요`,`0`));
+
+        if(num>=151) document.write(`<p class="red">미세먼지 수치가 매우나쁩니다.</p>`);
+        else if(num>=81) document.write(`<p class="orange">미세먼지 수치가 나쁩니다.</p>`);
+        else if(num>=31) document.write(`<p class="yellowgreen">미세먼지 수치가 보통입니다.</p>`);
+        else document.write(`<p class="skyblue">미세먼지 수치가 좋습니다.</p>`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

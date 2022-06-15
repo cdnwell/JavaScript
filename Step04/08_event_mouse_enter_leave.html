@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse event</title>
+    <style>
+        div {
+            padding: 30px;
+            border: 5px solid black;
+        }
+
+        p {
+            background-color: aquamarine;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var div = document.querySelector('div');
+
+            // 마우스가 들어가는 이벤트 onmouseenter
+            div.onmouseenter = () => {
+                div.style.borderColor = 'red';
+            }
+            // mouseout과 비슷한 이벤트
+            // 같은 기능 같지만 아님
+            div.onmouseleave = () => {
+                div.style.borderColor = 'black';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div">
+        <p id="p">내용</p>
+    </div>
+</body>
+
+</html>

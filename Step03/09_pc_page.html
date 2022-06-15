@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Page</title>
+    <script>
+        // 접속한 기기를 판단을 해서
+        // 안드로이드, 아이폰, 아이패드 이면 모바일 페이지로 보내기
+        // location 객체와 navigator 객체 toLowerCase를 이용하면 쉽게
+        // 해결 가능하다. indexOf도 이용하기
+
+        // var device = navigator.userAgent;
+        // device = device.toLowerCase();
+        // if(device.indexOf("iphone")+device.indexOf("android")+device.indexOf("ipad")>-3){
+        //     location.href="mobile_page.html";
+        // }
+
+        // 풀이]
+        var info = navigator.userAgent.toLowerCase();
+        var r = info.indexOf('android') + info.indexOf('iphone') + info.indexOf('ipad');
+        // if(info.indexOf('android') != -1 || info.indexOf('iphone') != -1 || info.indexOf('ipad') != -1){
+        //     location.href = 'mobile_page.html';
+        // }
+        if(r != -3){
+            location.href = 'mobile_page.html';
+        }
+
+    </script>
+</head>
+<body>
+    <h2>PC 페이지</h2>
+</body>
+</html>

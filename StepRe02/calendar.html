@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calendar</title>
+    <script>
+        let today = new Date();
+        let tag = `<h3>${today.getMonth()+1}월</h3>`;
+        tag += `<table><tr><th>일</th><th>월</th><th>화</th><th>수</th>
+            <th>목</th><th>금</th><th>토</th></tr>`;
+
+        let startDate = new Date(today.getFullYear(),today.getMonth(),1);
+        let endDate = new Date(today.getFullYear(),today.getMonth()+1,0);
+        
+        //달력상의 첫번째 날짜
+        startDate.setDate(startDate.getDate() - startDate.getDay());
+        //달력상의 마지막 날짜
+        endDate.setDate(endDate.getDate() - endDate.getDay() + 6);
+
+        let line = (endDate.getTime()-startDate.getTime())/(1000*60*60*24*7);
+
+        for(i=0;i<line;i++){
+            tag+=`<tr>`;
+            for(j=0;j<7;j++){
+                if(startDate.getMonth() != today.getMonth()){
+                    tag+=`<td class="disable">${startDate.getDate()}</td>`;    
+                }else{
+                    tag+=`<td>${startDate.getDate()}</td>`;
+                }
+                startDate.setDate(startDate.getDate()+1);
+            }
+            tag+=`</tr>`;
+        }
+        tag+=`</table>`;
+
+        document.write(tag);
+
+    </script>
+    <style>
+        h3{
+            text-align: center;
+        }
+        table{
+            border-collapse: collapse;
+            margin:0 auto;
+        }
+        td,th{
+            border: 1px solid black;
+            width: 100px;
+            padding: 10px;
+        }
+        td:nth-child(7n+1),th:nth-child(7n+1){
+            color: red;
+        }
+        td:nth-child(7n),th:nth-child(7n){
+            color: blue;
+        }
+        td{
+            height: 100px;
+            text-align: right;
+            vertical-align: top;
+        }
+        .disable{
+            color:#b7b7b7;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

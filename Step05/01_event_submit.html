@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            var id = document.querySelector("#id");
+            var pass = document.querySelector("#pass");
+            var frm = document.querySelector("#frm");
+
+            // frm.onsubmit();
+            // submit이 실행되게 하겠다. 원하는 시점에 실행 가능
+
+            frm.onsubmit = (e) => {
+                // 1. e.preventDefault();
+                // 2. return false;
+                // 이벤트 실행 막음
+                // return -> 함수 실행 종료도 가능함, 자주 쓰임
+
+                if (id.value.length == 0) {
+                    alert('아이디를 입력하세요');
+                    // e.preventDefault();
+                    id.focus();
+                    return false;
+                }
+
+                if (pass.value.length == 0) {
+                    alert('암호를 입력하세요');
+                    e.preventDefault();
+                    pass.focus();
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" id="frm">
+        <input type="text" id="id" name="id"><br>
+        <input type="password" id="pass" name="pass"><br>
+        <button>로그인</button>
+    </form>
+</body>
+
+</html>

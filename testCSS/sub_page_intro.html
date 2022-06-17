@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page | Main</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        header {
+            background-color: #4578e6;
+            height: 100px;
+        }
+
+        .login_box {
+            float: right;
+            width: 270px;
+            color: white;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .login_box img {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            float: left;
+            margin-top: 25px;
+        }
+
+        .login_box p:first-child {
+            display: inline-block;
+            margin: 0 10px;
+            margin-top: 27px;
+        }
+
+        .login_box p:last-child {
+            margin: 5px 10px;
+            font-size: 0.8em;
+            display: inline-block;
+        }
+
+        .modify,
+        .logout {
+            text-decoration: none;
+            color: white;
+        }
+
+
+        .main_img {
+            position: relative;
+            height: 400px;
+        }
+
+        .main_img>img {
+            width: 100%;
+            height: 400px;
+        }
+
+        .left_arrow {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: calc(100% / 2 - 25px);
+            left: 0;
+        }
+
+        .right_arrow {
+            transform: rotate(180deg);
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: calc(100% / 2 - 25px);
+            right: 0;
+        }
+
+
+        nav {
+            width: 100%;
+            background-color: #4578e6;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        nav a {
+            width: 150px;
+            text-align: center;
+            display: inline-block;
+            padding: 30px 0;
+            text-decoration: none;
+            color: white;
+        }
+
+
+        section {
+            height: 800px;
+        }
+
+        .article_top img {
+            margin: 20px;
+            width: 400px;
+            float: left;
+        }
+
+        .article_top p {
+
+            padding: 0 10px;
+        }
+
+        .article_top h3 {
+            padding: 20px;
+        }
+
+        .article_street {
+            width: 500px;
+            float: right;
+            padding: 20px;
+        }
+
+        .article_par_bot {
+            padding: 10px;
+            padding-top: 20px;
+        }
+
+
+        footer {
+            background-color: #4578e6;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        footer p {
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="login_box">
+                <img src="img/profile.png" alt="프로필 사진">
+                <article>
+                    <p>OOO 로그인 하셨습니다.</p>
+                    <p><a href="#" class="modify">정보수정</a> | <a href="#" class="logout">로그아웃</a></p>
+                </article>
+            </div>
+        </header>
+        <div class="main_img">
+            <img src="img/buildings.jpg" alt="메인 사진" title="빌딩 메인">
+            <a href="#"><img src="img/left_arrow.png" alt="왼쪽 화살표" class="left_arrow"></a>
+            <a href="#"><img src="img/left_arrow.png" alt="오른쪽 화살표" class="right_arrow"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="main_page.html">HOME</a></li>|
+                <li><a href="sub_page_book.html">예약</a></li>|
+                <li><a href="sub_page_intro.html">펜션 소개</a></li>|
+                <li><a href="sub_page_map.html">오시는 길</a></li>
+            </ul>
+        </nav>
+        <section>
+            <article>
+                <div class="article_top">
+                    <figure>
+                        <img src="img/building_sub.jpg" alt="도시 전경">
+                        <figcaption>도시 전경</figcaption>
+                    </figure>
+                    <h3>펜션 소개</h3>
+                    <p>모든 국민은 거주·이전의 자유를 가진다. 대통령은 제1항과 제2항의 처분 또는 명령을 한 때에는 지체없이 국회에 보고하여 그 승인을 얻어야 한다. 근로자는 근로조건의 향상을
+                        위하여 자주적인 단결권·단체교섭권 및 단체행동권을 가진다. 비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병·초소·유독음식물공급·포로에 관한
+                        죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다. 다만, 사형을 선고한 경우에는 그러하지 아니하다.
+
+                        국회가 재적의원 과반수의 찬성으로 계엄의 해제를 요구한 때에는 대통령은 이를 해제하여야 한다. 국회는 헌법개정안이 공고된 날로부터 60일 이내에 의결하여야 하며, 국회의
+                        의결은 재적의원 3분의 2 이상의 찬성을 얻어야 한다. 타인의 범죄행위로 인하여 생명·신체에 대한 피해를 받은 국민은 법률이 정하는 바에 의하여 국가로부터 구조를 받을 수
+                        있다.
+
+                        국가의 세입·세출의 결산, 국가 및 법률이 정한 단체의 회계검사와 행정기관 및 공무원의 직무에 관한 감찰을 하기 위하여 대통령 소속하에 감사원을 둔다. 모든 국민은 근로의
+                        의무를 진다. 국가는 근로의 의무의 내용과 조건을 민주주의원칙에 따라 법률로 정한다. 대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장
+                        또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여
+                        법률의 효력을 가지는 명령을 발할 수 있다.</p>
+                </div>
+                <figure>
+                    <img src="img/building_sub02.jpg" alt="도심 거리" class="article_street">
+                    <figcaption>도심 거리 - 많은 사람들이 걸어다니고 있다.</figcaption>
+                </figure>
+                <p class="article_par_bot">
+                    모든 국민은 법률이 정하는 바에 의하여 국방의 의무를 진다. 국교는 인정되지 아니하며, 종교와 정치는 분리된다. 비상계엄이 선포된 때에는 법률이 정하는 바에 의하여 영장제도,
+                    언론·출판·집회·결사의 자유, 정부나 법원의 권한에 관하여 특별한 조치를 할 수 있다. 국회의 회의는 공개한다. 다만, 출석의원 과반수의 찬성이 있거나 의장이 국가의 안전보장을
+                    위하여 필요하다고 인정할 때에는 공개하지 아니할 수 있다.
+
+                    공무원의 직무상 불법행위로 손해를 받은 국민은 법률이 정하는 바에 의하여 국가 또는 공공단체에 정당한 배상을 청구할 수 있다. 이 경우 공무원 자신의 책임은 면제되지 아니한다.
+                    대통령이 제1항의 기간내에 공포나 재의의 요구를 하지 아니한 때에도 그 법률안은 법률로서 확정된다. 외국인은 국제법과 조약이 정하는 바에 의하여 그 지위가 보장된다.
+
+                    모든 국민은 직업선택의 자유를 가진다. 국가는 평생교육을 진흥하여야 한다. 법관은 헌법과 법률에 의하여 그 양심에 따라 독립하여 심판한다. 헌법재판소의 장은 국회의 동의를 얻어
+                    재판관중에서 대통령이 임명한다. 대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 군사에 관한 것도 또한 같다.
+
+                    대통령은 국회에 출석하여 발언하거나 서한으로 의견을 표시할 수 있다. 정당의 목적이나 활동이 민주적 기본질서에 위배될 때에는 정부는 헌법재판소에 그 해산을 제소할 수 있고, 정당은
+                    헌법재판소의 심판에 의하여 해산된다. 제1항의 탄핵소추는 국회재적의원 3분의 1 이상의 발의가 있어야 하며, 그 의결은 국회재적의원 과반수의 찬성이 있어야 한다. 다만, 대통령에
+                    대한 탄핵소추는 국회재적의원 과반수의 발의와 국회재적의원 3분의 2 이상의 찬성이 있어야 한다.
+                </p>
+            </article>
+        </section>
+        <footer>
+            <p>OOOO 펜션 <br>
+                대표자 : OOO <br>
+                연락처 : 010-0000-0000 <br>
+                주소 : 강원도 평창시 OOOOOOO</p>
+        </footer>
+    </div>
+</body>
+
+</html>

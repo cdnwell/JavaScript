@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page | Book</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        header {
+            background-color: #4578e6;
+            height: 100px;
+        }
+
+        .login_box {
+            float: right;
+            width: 270px;
+            color: white;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .login_box img {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            float: left;
+            margin-top: 25px;
+        }
+
+        .login_box p:first-child {
+            display: inline-block;
+            margin: 0 10px;
+            margin-top: 27px;
+        }
+
+        .login_box p:last-child {
+            margin: 5px 10px;
+            font-size: 0.8em;
+            display: inline-block;
+        }
+
+        .modify,
+        .logout {
+            text-decoration: none;
+            color: white;
+        }
+
+
+        .main_img {
+            position: relative;
+            height: 400px;
+        }
+
+        .main_img>img {
+            width: 100%;
+            height: 400px;
+        }
+
+        .left_arrow {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: calc(100% / 2 - 25px);
+            left: 0;
+        }
+
+        .right_arrow {
+            transform: rotate(180deg);
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: calc(100% / 2 - 25px);
+            right: 0;
+        }
+
+
+        nav {
+            width: 100%;
+            background-color: #4578e6;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        nav a {
+            width: 150px;
+            text-align: center;
+            display: inline-block;
+            padding: 30px 0;
+            text-decoration: none;
+            color: white;
+        }
+
+        section{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 1000px;
+        }
+        .div_cal {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 800px;
+            width: 100%;
+        }
+        .div_cal img{
+            width: 50px;
+            height: 50px;
+            margin: 30px;
+        }
+        table {
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        td {
+            width: 100px;
+            height: 100px;
+            text-align: right;
+            vertical-align: top;
+        }
+
+        caption {
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .arrow_right {
+            transform: rotate(180deg);
+        }
+
+
+        .input_box{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            font-size: 0px;
+        }
+        h4{
+            font-size: 20px;
+            text-align: center;
+        }
+        .input_check_in input, .input_check_out input{
+            width: 150px;
+            height: 50px;
+            margin: 10px;
+        }
+        .input_people input{
+            width: 150px;
+            height: 50px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid black;
+        }
+        .input_people button{
+            width: 40px;
+            height: 50px;
+            border: 1px solid black;
+            background-color: white;
+        }
+        .input_people button:active{
+            background-color: #4578e6;
+            color: white;
+        }
+        .input_people input{
+            font-size: 16px;
+        }
+        .people_num{
+            text-align: center;
+        }
+        .input_book button{
+            width: 150px;
+            background-color: #7899df;
+            border: 1px solid black;
+            height: 50px;
+            margin-top: 38px;
+            color: white;
+        }
+        .input_book button:active{
+            background-color: white;
+            color: black;
+        }
+        .input_check_out input, .input_check_in input{
+            text-align: center;
+        }
+
+
+        footer {
+            background-color: #4578e6;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        footer p {
+            color: white;
+            text-align: center;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var cal_table = $('.cal_table');
+
+            var str = '<caption>6월 일정표</caption>';
+
+            str += '<tr>';
+            str += '<th>일</th><th>월</th><th>화</th><th>수</th>' +
+                '<th>목</th><th>금</th><th>토</th>';
+            str += '</tr>';
+
+            var today = new Date('2022-06-01');
+            var start_date = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 3);
+            var end_date = new Date(today.getFullYear(), today.getMonth() + 1, 2);
+
+            var line = (end_date.getTime() - start_date.getTime()) / (1000 * 60 * 60 * 24 * 7);
+            for (i = 0; i < line; i++) {
+                str += '<tr>';
+                for (j = 0; j < 7; j++) {
+                    if (start_date.getMonth() != today.getMonth()) {
+                        str += `<td class="disable">`;
+                    } else if (start_date.getDay() == 0) {
+                        str += `<td class="red">`;
+                    } else if (start_date.getDay() == 6) {
+                        str += `<td class="blue">`;
+                    } else {
+                        str += `<td>`;
+                    }
+                    str += `${start_date.getDate()}</td>`;
+                    start_date.setDate(start_date.getDate() + 1);
+                }
+                str += '</tr>';
+            }
+
+            cal_table.html(str);
+
+            $('.disable').css('color', 'gray');
+            $('.red').css('color', 'red');
+            $('.blue').css('color', 'blue');
+            $('th:first-child').css('color', 'red');
+            $('th:last-child').css('color', 'blue');
+
+
+            let inValue = 1;
+            $('.people_num').val(inValue);
+            $('.people_minus').click(function(){
+                if(inValue > 0)
+                    inValue--;
+                $('.people_num').val(inValue);
+            });
+            $('.people_plus').click(function(){
+                if(inValue < 30)
+                    inValue++;
+                $('.people_num').val(inValue);
+            });
+            
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="login_box">
+                <img src="img/profile.png" alt="프로필 사진">
+                <article>
+                    <p>OOO 로그인 하셨습니다.</p>
+                    <p><a href="#" class="modify">정보수정</a> | <a href="#" class="logout">로그아웃</a></p>
+                </article>
+            </div>
+        </header>
+        <div class="main_img">
+            <img src="img/buildings.jpg" alt="메인 사진" title="빌딩 메인">
+            <a href="#"><img src="img/left_arrow.png" alt="왼쪽 화살표" class="left_arrow"></a>
+            <a href="#"><img src="img/left_arrow.png" alt="오른쪽 화살표" class="right_arrow"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="main_page.html">HOME</a></li>|
+                <li><a href="sub_page_book.html">예약</a></li>|
+                <li><a href="sub_page_intro.html">펜션 소개</a></li>|
+                <li><a href="sub_page_map.html">오시는 길</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div class="div_cal">
+                <img src="img/left_arrow.png" alt="달력 이전 페이지" class="arrow_left">
+                <div class="cal_box">
+                    <table class="cal_table">
+                    </table>
+                </div>
+                <img src="img/left_arrow.png" alt="달력 이전 페이지" class="arrow_right">
+            </div>
+            <div class="input_box">
+                <div class="input_check_in">
+                    <h4>체크인</h4>
+                    <input type="date">
+                </div>
+                <div class="input_check_out">
+                    <h4>체크아웃</h4>
+                    <input type="date">
+                </div>
+                <div class="input_people">
+                    <h4>인원수</h4>
+                    <button class="people_minus">-</button>
+                    <input class="people_num" type="text">
+                    <button class="people_plus">+</button>
+                </div>
+                <div class="input_book">
+                    <button>예약하기</button>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>OOOO 펜션 <br>
+                대표자 : OOO <br>
+                연락처 : 010-0000-0000 <br>
+                주소 : 강원도 평창시 OOOOOOO</p>
+        </footer>
+    </div>
+</body>
+
+</html>

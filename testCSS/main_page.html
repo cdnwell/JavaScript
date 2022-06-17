@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page | Main</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        header{
+            background-color: #4578e6;
+            height: 100px;
+        }
+        .login_box {
+            float: right;
+            width: 270px;
+            color: white;
+            display: flex;
+            flex-direction: row;
+        }
+        .login_box img{
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            float: left;
+            margin-top: 25px;
+        }
+        .login_box p:first-child{
+            display: inline-block;
+            margin: 0 10px;
+            margin-top: 27px;
+        }
+        .login_box p:last-child{
+            margin: 5px 10px;
+            font-size: 0.8em;
+            display: inline-block;
+        }
+        .modify, .logout{
+            text-decoration: none;
+            color: white;
+        }
+
+
+        .main_img{
+            position: relative;
+            height: 400px;
+        }
+        .main_img > img{
+            width: 100%;
+            height: 400px;
+        }
+        .left_arrow{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: calc(100% / 2 - 25px);
+            left: 0;
+        }
+        .right_arrow{
+            transform: rotate(180deg);
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: calc(100% / 2 - 25px);
+            right: 0;
+        }
+
+
+        nav{
+            width: 100%;
+            background-color: #4578e6;
+            text-align: center;
+        }
+        nav li{
+            display: inline-block;
+        }
+        nav a{
+            width: 150px;
+            text-align: center;
+            display: inline-block;
+            padding: 30px 0;
+            text-decoration: none;
+            color: white;
+        }
+
+
+        section{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            height: 550px;
+            align-items: center;
+        }
+        .div_table_right{
+            margin-left: 120px;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        td,th{
+            border-top: 1px solid #b7b7b7;
+            border-bottom: 1px solid #b7b7b7;    
+            padding : 20px;
+        }
+        caption{
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        
+        footer{
+            background-color: #4578e6;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        footer p{
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="login_box">
+                <img src="img/profile.png" alt="프로필 사진">
+                <article>
+                <p>OOO 로그인 하셨습니다.</p>
+                <p><a href="#" class="modify">정보수정</a> | <a href="#" class="logout">로그아웃</a></p>
+            </article>
+            </div>
+        </header>
+        <div class="main_img">
+            <img src="img/buildings.jpg" alt="메인 사진" title="빌딩 메인">
+            <a href="#"><img src="img/left_arrow.png" alt="왼쪽 화살표" class="left_arrow"></a>
+            <a href="#"><img src="img/left_arrow.png" alt="오른쪽 화살표" class="right_arrow"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="main_page.html">HOME</a></li>|
+                <li><a href="sub_page_book.html">예약</a></li>|
+                <li><a href="sub_page_intro.html">펜션 소개</a></li>|
+                <li><a href="sub_page_map.html">오시는 길</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div class="div_table_left">
+            <table class="table_left">
+                <caption>공지사항</caption>
+                <tr>
+                    <th>글번호</th>
+                    <th>제목</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>제목D</td>
+                    <td>2021-07-23</td>
+                    <td>213</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>제목C</td>
+                    <td>2021-07-21</td>
+                    <td>37</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>제목B</td>
+                    <td>2021-07-12</td>
+                    <td>121</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>제목A</td>
+                    <td>2021-07-04</td>
+                    <td>37</td>
+                </tr>
+            </table>
+        </div>
+        <div class="div_table_right">
+            <table class="table_right">
+                <caption>이벤트</caption>
+                <tr>
+                    <th>글번호</th>
+                    <th>제목</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>제목D</td>
+                    <td>2021-07-23</td>
+                    <td>213</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>제목C</td>
+                    <td>2021-07-21</td>
+                    <td>37</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>제목B</td>
+                    <td>2021-07-12</td>
+                    <td>121</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>제목A</td>
+                    <td>2021-07-04</td>
+                    <td>37</td>
+                </tr>
+            </table>
+        </div>
+        </section>
+        <footer>
+            <p>OOOO 펜션 <br>
+                대표자 : OOO <br>
+                연락처 : 010-0000-0000 <br>
+                주소 : 강원도 평창시 OOOOOOO</p>
+        </footer>
+    </div>
+</body>
+
+</html>

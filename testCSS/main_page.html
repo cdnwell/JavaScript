@@ -76,7 +76,7 @@
             top: calc(100% / 2 - 25px);
             right: 0;
         }
-
+        
 
         nav{
             width: 100%;
@@ -133,6 +133,52 @@
             text-align: center;
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function img_change(count){
+            var main_img = $('.main_img_tr');
+            if(count == 0){
+                main_img.attr('src','img/buildings.jpg');
+            }else if(count ==1){
+                main_img.attr('src','img/forest.jpg');
+            }else if(count ==2){
+                main_img.attr('src','img/beach.jpg');
+            }
+        }
+
+        $(function(){
+            var left_arrow = $('.left_arrow');
+            var right_arrow = $('.right_arrow');
+
+            var img_count = 0;
+            left_arrow.click(()=>{
+                if(img_count>0){
+                    img_count--;
+                    img_change(img_count);
+                }
+                else if(img_count==0){
+                    img_count =2;
+                    img_change(img_count);
+                }
+            });
+            right_arrow.click(()=>{
+                if(img_count<2){
+
+                    img_count++;
+                    img_change(img_count);
+                }
+                else if(img_count ==2){
+
+                    img_count = 0;
+                    img_change(img_count);
+                }
+            });
+
+            
+
+            console.log(img_count);
+        });
+    </script>
 </head>
 
 <body>
@@ -147,9 +193,9 @@
             </div>
         </header>
         <div class="main_img">
-            <img src="img/buildings.jpg" alt="메인 사진" title="빌딩 메인">
-            <a href="#"><img src="img/left_arrow.png" alt="왼쪽 화살표" class="left_arrow"></a>
-            <a href="#"><img src="img/left_arrow.png" alt="오른쪽 화살표" class="right_arrow"></a>
+            <img src="img/buildings.jpg" alt="메인 사진" title="빌딩 메인" class="main_img_tr">
+            <a href="#" class="left_arrow"><img src="img/left_arrow.png" alt="왼쪽 화살표" ></a>
+            <a href="#" class="right_arrow"><img src="img/left_arrow.png" alt="오른쪽 화살표" ></a>
         </div>
         <nav>
             <ul>

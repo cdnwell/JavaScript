@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 1000px;
+            margin: 0 auto;
+        }
+        header{
+            height: 100px;
+            border : solid 1px rgb(183, 183, 183);
+        }
+        .login_box{
+            float: right;
+            width: 200px;
+            margin : 30px 0;
+        }
+        .login_box img{
+            float: left;
+            display: inline-block;
+        }
+        .login_box p:first-of-type{
+            padding-top: 2px;
+        }
+        .login_box p:last-child a{
+            font-size: 13px;
+            text-decoration: none;
+            color: black;
+        }
+
+
+        .main_img_box{
+            position: relative;
+        }
+        .main_img{
+            width: 100%;
+            height: 550px;
+        }
+        .left_arrow{
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            padding-left: 5px;
+            padding-top: 5px;
+            
+        }
+        .right_arrow{
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            transform: rotate(180deg);
+            padding-right: 5px;
+            padding-bottom: 5px;
+        }
+        .left_arrow_box{
+            width:70px;
+            height: 70px;
+            background-color: rgba(183, 183, 183, 0.6);
+            position: absolute;
+            top: calc(100% / 2 - 30px);
+            left: 0;
+        }
+        .right_arrow_box{
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            right: 0;
+            top: calc(100% / 2 - 30px);
+            background-color: rgba(183, 183, 183, 0.6);
+        }
+
+        nav ul{
+            text-align: center;
+        }
+        nav li{
+            display: inline-block;
+            text-align: center;
+        }
+        nav a{
+            display: inline-block;
+            width: 150px;
+            text-decoration: none;
+            color: black;
+            padding: 20px 0;
+        }
+        nav a:active{
+            background-color: #b7b7b7;
+        }
+
+
+        section{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            height: 500px;
+            align-items: center;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        td,th{
+            padding: 20px;
+            border-top: #b7b7b7 solid 1px;
+            border-bottom: #b7b7b7 solid 1px;
+
+        }
+        td{
+            text-align: center;
+        }
+
+        footer{
+            background-color: #b7b7b7;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        footer p{
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="login_box">
+                <img src="img/profile.png" alt="프로필 사진" title="프로필.png">
+                <p>OOO 로그인</p>
+                <p><a href="modify_info_page.png">정보수정</a> | <a href="#">로그아웃</a></p>
+            </div>
+        </header>
+        <div class="main_img_box">
+            <img src="img/forest01.jpg" class="main_img" alt="숲 사진" title="숲.jpg">
+            <div class="left_arrow_box">
+                <img src="img/left_arrow.png" class="left_arrow" alt="왼쪽 화살표" title="화살표.png">
+            </div>
+            <div class="right_arrow_box">
+                <img src="img/left_arrow.png" class="right_arrow" alt="오른쪽 화살표" title="화살표.png">
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="main_page.html">HOME</a></li>
+                <li><a href="sub_page_book.html">숲 관광 예약</a></li>
+                <li><a href="sub_page_intro.html">숲 소개</a></li>
+                <li><a href="sub_page_map.html">오시는 길</a></li>
+            </ul>
+        </nav>
+        <section>
+            <table class="table_left">
+                <thead>
+                    <tr>
+                        <th>글번호</td>
+                        <th>제목</td>
+                        <th>작성일</th>
+                        <th>조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4</td>
+                        <td>숲 관람 일지4</td>
+                        <td>2020-1-31</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>숲 관람 일지3</td>
+                        <td>2019-10-3</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>숲 관람 일지2</td>
+                        <td>2019-8-13</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>숲 관람 일지1</td>
+                        <td>2019-7-13</td>
+                        <td>71</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table_right">
+                <thead>
+                    <tr>
+                        <th>글번호</td>
+                        <th>제목</td>
+                        <th>작성일</th>
+                        <th>조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4</td>
+                        <td>숲 관람 일지4</td>
+                        <td>2020-1-31</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>숲 관람 일지3</td>
+                        <td>2019-10-3</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>숲 관람 일지2</td>
+                        <td>2019-8-13</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>숲 관람 일지1</td>
+                        <td>2019-7-13</td>
+                        <td>71</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <footer>
+            <p>
+                copyright&copy; 2022. Hsh. All rights reserverd. <br>
+                email : email@gamail.com <br>
+                homepage : cndwell@github.com
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

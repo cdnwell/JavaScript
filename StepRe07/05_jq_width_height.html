@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #d1 {
+            width: 100px;
+            height: 100px;
+            padding: 30px;
+            border: 10px solid black;
+            margin: 30px;
+        }
+
+        #d2 {
+            width: 100px;
+            height: 100px;
+            padding: 30px;
+            border: 10px solid black;
+            margin: 30px;
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // 1. div d1 내용 영역 width, height를 콘솔에 출력하기
+            // 2. padding 영역 까지 width, height를 콘솔에 출력하기
+            // 3. border 영역 까지 width, height를 콘솔에 출력하기
+            // 4. div d2를 border영역 width를 100px으로 설정하기
+
+            console.log($('#d1').width(), $('#d1').height());
+            console.log($('#d1').innerWidth(),$('#d1').innerHeight());
+            console.log($('#d1').outerWidth(), $('#d1').outerHeight());
+
+            $('#d2').width(100);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+</body>
+
+</html>

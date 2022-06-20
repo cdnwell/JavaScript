@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0ch;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 1440px;
+            height: 1024px;
+        }
+
+        aside {
+            background-color: #b7b7b7;
+            width: 55px;
+        }
+
+        aside li {
+            margin: 10px 7px;
+            display: inline-block;
+        }
+
+
+        .main_container ul {
+            text-align: center;
+            border-bottom: 1px solid #b7b7b7;
+        }
+
+        .main_container li {
+            display: inline-block;
+        }
+
+        .main_container a {
+            display: inline-block;
+            width: 150px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            color: black;
+            text-decoration: none;
+            padding: 20px;
+        }
+
+
+
+        section {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            height: 563px;
+            align-items: center;
+        }
+
+        .main_request p {
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .main_request input {
+            width: 400px;
+            height: 30px;
+            border-radius: 7px;
+            border: 1px solid black;
+        }
+
+        h1 {
+            font-size: 30px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .request_board div {
+            margin-bottom: 10px;
+        }
+
+        .request_board input {
+            padding-left: 7px;
+        }
+
+        .board_title p {
+            margin-left: 110px;
+            margin-right: 10px;
+        }
+
+        .board_writer p {
+            margin-left: 90px;
+            margin-right: 10px;
+        }
+
+        .board_email {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .board_email p {
+            margin-left: 1px;
+            margin-right: 10px;
+        }
+
+        .board_email input {
+            width: 170px;
+        }
+
+        .board_email select {
+            width: 193px;
+            height: 30px;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .board_content {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .board_content p {
+            margin-left: 68px;
+            margin-right: 18px;
+        }
+
+        .board_content textarea {
+            display: inline-block;
+            border-radius: 5px;
+            padding-left: 7px;
+            padding-top: 7px;
+        }
+
+        .board_button {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .board_button button {
+            width: 100px;
+            height: 50px;
+            border-radius: 10px;
+            border: 0;
+            background-color: cornflowerblue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="#"><img src="img/home.png" alt="홈 이미지" title="홈 이미지"></a></li>
+                    <li><a href="#"><img src="img/coffee_icon.png" alt="커피 이미지" title="커피 이미지"></a></li>
+                    <li><a href="#"><img src="img/paper.png" alt="종이 이미지" title="종이 이미지"></a></li>
+                    <li><a href="#"><img src="img/tv.png" alt="티비 이미지" title="티비 이미지"></a></li>
+                    <li><a href="#"><img src="img/call.png" alt="헤드셋 전화 이미지" title="헤드셋 전화 이미지"></a></li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="main_container">
+            <header>
+                <img src="img/main.png" alt="메인화면 광고 이미지" title="메인화면 광고 이미지">
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="#" title="HOME">HOME</a></li>
+                    <li><a href="#" title="COFFEE">COFFEE</a></li>
+                    <li><a href="#" title="CF">CF</a></li>
+                    <li><a href="#" title="PRINT">PRINT</a></li>
+                    <li><a href="#" title="문의하기">문의하기</a></li>
+                </ul>
+            </nav>
+            <section>
+                <div class="main_request">
+                    <h1>제품 문의하기</h1>
+                    <div class="request_board">
+                        <form action="main_page.html" method="get" name="request_content" id="request_content">
+                            <div class="board_title">
+                                <p><label for="title">제목</label></p>
+                                <input type="text" name="title" required id="title">
+                            </div>
+                            <div class="board_writer">
+                                <p><label for="writer">작성자</label></p>
+                                <input type="text" name="writer" id="writer" required>
+                            </div>
+                            <div class="board_email">
+                                <p><label for="email">답변받을 이메일</label></p>
+                                <input type="text" name="email_id" id="email" required> @
+                                <select name="email_address" required>
+                                    <option value="1">gmail.com</option>
+                                    <option value="2">naver.com</option>
+                                    <option value="3">hanmail.net</option>
+                                </select>
+                            </div>
+                            <div class="board_content">
+                                <p><label for="content">문의내용</label></p>
+                                <textarea name="content" id="content" cols="55" rows="15" required></textarea>
+                            </div>
+                            <div class="board_button">
+                                <button type="submit">문의하기</button>
+                                <button type="reset">초기화</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            //1. console에 value 값을 출력해라 2가지 방법
+            //2. button이 클릭되면 '클릭 이벤트' 라는 메시지를 콘솔로 출력하기
+            //3. input txt에 값 113573을 넣기
+            //4. 콘솔에 input 값을 두가지 방법으로 출력하기
+
+            console.log($('#txt').val());
+            console.log($('#txt').attr('value'));
+
+
+            $('#btn').click(()=>{
+                console.log('클릭 이벤트');
+
+                $('#txt').val(113573);
+
+                console.log($('#txt').attr('value'));
+                console.log($('#txt').val());
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" id="txt" value="test">
+    <button id="btn">실행</button>
+</body>
+
+</html>

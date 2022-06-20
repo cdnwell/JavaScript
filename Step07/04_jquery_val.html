@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // val() value 값을 읽어옴
+            // val() 와 attr('value')는 약간의 차이가 있다.
+            console.log($('#txt').attr('value'));
+            console.log($('#txt').val());
+
+            
+            // 버튼 클릭이벤트
+            $('#btn').click(function () {
+                console.log('---클릭 이벤트---');
+                // attr은 태그 속성값만 바꿔준다. txt에 값이 먼저 들어가
+                // 있으면 value 태그 속성만 넣어주고 값을 바꾸진 않는다.
+                // $('#txt').attr('value', '111111');
+
+                // val() 함수는 인자를 선택자에 직접 넣어준다. 
+                // 값을 바꾼다. 태그에 속성을 넣진 않는다.
+                // 현재 입력된 값으로 설정해준다.
+                $('#txt').val('111111');
+
+                // attribute와 property의 차이점
+                // val은 property 변경
+                // attr은 attribute 변경
+
+                console.log($('#txt').attr('value'));
+                console.log($('#txt').val());
+            });
+        });
+
+        
+    </script>
+    
+</head>
+
+<body>
+    <input type="text" id="txt" value="test">
+    <button id="btn">실행</button>
+</body>
+
+</html>

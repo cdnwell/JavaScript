@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+
+        .size {
+            font-size: 20px;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // 현재 적용된 클래스를 조회
+            console.log($('p').attr('class'));
+
+
+            // 선택된 요소에 클래스를 추가
+            $('p').addClass('bold');
+            $('p').addClass('bold');    //중복 추가는 안됨
+            console.log($('p').attr('class'));
+
+
+            // 클래스 삭제 함수 removeClass('클래스명')
+            // '클래스명' 클래스가 삭제된다.
+            $('p').removeClass('underline');
+
+
+            // toggleClass('클래스명')
+            // '클래스명'이 있으면 지우고 없으면 추가한다.
+            $('p').toggleClass('underline');
+            console.log($('p').attr('class'));
+            $('p').toggleClass('underline');
+            console.log($('p').attr('class'));
+
+
+            // hasClass('클래스명') '클래스명' 클래스를 가지고 있는지
+            // 있다 -> true , 없다 -> false
+            console.log($('p').hasClass('bold'));
+            console.log($('p').hasClass('underline'));
+
+        });
+    </script>
+</head>
+
+<body>
+    <p class="size underline">내용</p>
+</body>
+
+</html>

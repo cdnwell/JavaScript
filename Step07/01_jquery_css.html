@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <style>
+        p {
+            background-color: cornflowerblue;
+            font-size: 20px;
+            color: white;
+        }
+
+        .back {
+            background-color: black;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // 현재 적용된 css 값을 읽어올 수 있다.
+            // p태그에 적용시킨 값은 cornflowerblue인데 실제 적용 된 값
+            // 은 black이므로 black이 반환된다.
+
+            // css('속성') --> 현재 설정된 css 값
+            console.log($('p').css('background-color'));
+
+            // rgb(255,255,255)
+            console.log($('p').css('color'));
+
+
+            // css('속성','값') --> 해당 css 속성에 새 속성값을 지정
+            // 속성 여러개 넣는 방법 { } <- 객체로 값을 전달한다.
+            $('div').css({
+                'color': 'white',
+                'font-weight': 'bold',
+            });
+
+
+            // 체인함수 방식
+            $('div').css('color', 'white').css('font-weight', 'bold');
+
+            
+
+        });
+    </script>
+</head>
+
+<body>
+    <p class="back">내용</p>
+    <div class="back">내용</div>
+</body>
+
+</html>

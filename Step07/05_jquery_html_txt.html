@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // 태그 까지 다 꺼낸다 -> html()
+            console.log($('#d3').html())
+            // 텍스트만 꺼낸다 -> text()
+            console.log($('#d3').text())
+
+
+            // 주로 html을 쓰게 된다.
+            $('#d1').html('<h2>제목태그</h2>');
+            // js innerHTML -> html();
+            // h2태그도 글자로 취급해 스타일이 적용되지 않는다.
+            // js innerText -> text()
+            $('#d2').text('<h2>제목태그</h2>');
+            
+          
+        });
+    </script>
+</head>
+
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3">
+        <p>#d3 문단 내용</p>
+        <p>#d3 문단 내용</p>
+    </div>
+</body>
+
+</html>

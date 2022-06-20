@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 1200px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+
+
+        header{
+            width: 100%;
+            height: 100px;
+            background-color: #E2CCB2;
+            border-radius: 5px;
+        }
+        .login_box{
+            width: 260px;
+            float: right;
+            display: flex;
+            flex-direction: row;
+            margin-top: 23px;
+        }
+        .login_box img{
+            width: 60px;
+            height: 60px;
+            display: inline-block;
+        }
+        .login_box_text{
+            margin-top: 6px;
+        }
+        .login_box p{
+            display: inline-block;
+        }
+        .login_box a{
+            display: inline-block;
+            font-size: 14px;
+            text-decoration: none;
+            color: black;
+        }
+
+
+        .main_img_box{
+            position: relative;
+            font-size: 0;
+        }
+        .main_img_desert{
+            width: 100%;
+            height: 450px;
+        }
+        .main_left_arrow{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 0;
+            top: calc(100% / 2 - 25px);
+        }
+        .main_right_arrow{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            right: 0;
+            top: calc(100% / 2 - 25px);
+            transform: rotate(180deg);
+        }
+
+
+
+        nav{
+            width: 100%;
+            background-color: #E2CCB2;
+        }
+        nav ul{
+            text-align: center;
+        }
+        nav li{
+            display: inline-block;
+            /* text-align: center; */
+        }
+        nav a{
+            display: inline-block;
+            width: 150px;
+            text-align: center;
+            padding: 20px;
+            color: black;
+            text-decoration: none;
+        }
+
+
+
+        section{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            height: 500px;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        td,th{
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #b7b7b7;
+            border-bottom: 1px solid #b7b7b7;
+
+        }
+
+
+
+        footer{
+            background-color: #E2CCB2;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 160px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="login_box">
+                <img src="img/profile02.png" alt="프로필 사진" title="프로필 사진">
+                <div class="login_box_text">
+                    <p>OOO 로그인 하셨습니다.</p>
+                    <p><a href="#">정보수정</a> | <a href="#">로그아웃</a></p>
+                </div>
+            </div>
+        </header>
+        <div class="main_img_box">
+            <img src="img/desert.jpg" class="main_img_desert" alt="사막 메인 이미지" title="사막 이미지">
+            <img src="img/left_arrow.png" class="main_left_arrow" alt="왼쪽 화살표 이미지" title="왼쪽 화살표">
+            <img src="img/left_arrow.png" class="main_right_arrow" alt="오른쪽 화살표 이미지" title="오른쪽 화살표">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">사막 여행</a></li>
+                <li><a href="#">여행 소개글</a></li>
+                <li><a href="#">오시는 길</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div class="table_left">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>글번호</th>
+                            <th>제목</th>
+                            <th>작성일</th>
+                            <th>조회수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3</td>
+                            <td>바다 여행3</td>
+                            <td>2022-01-03</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>바다 여행2</td>
+                            <td>2022-01-02</td>
+                            <td>43</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>바다 여행1</td>
+                            <td>2022-01-01</td>
+                            <td>80</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table_right">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>글번호</th>
+                            <th>제목</th>
+                            <th>작성일</th>
+                            <th>조회수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3</td>
+                            <td>바다 여행3</td>
+                            <td>2022-01-03</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>바다 여행2</td>
+                            <td>2022-01-02</td>
+                            <td>43</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>바다 여행1</td>
+                            <td>2022-01-01</td>
+                            <td>80</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <footer>
+            <p>
+                copyright&copy; 2022. Hsh. All rights reserved. <br>
+                email : email@gamail.com <br>
+                home : cdnwell@github.com
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

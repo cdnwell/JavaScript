@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 0;
+        }
+
+        .big_img {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+        }
+
+        .big_img img {
+            width: 500px;
+            height: 500px;
+        }
+
+
+
+        .small_img_bar {
+            width: 600px;
+            margin: 0 auto;
+            height: 100px;
+            position: relative;
+        }
+
+        .small_img_bar_rest {
+            width: 500px;
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .small_img_bar_rest img {
+            width: 100px;
+            height: 100px;
+
+        }
+
+        .left_arrow,
+        .right_arrow {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 20px;
+        }
+
+        .left_arrow {
+            left: 0;
+        }
+
+        .right_arrow {
+            right: 0;
+        }
+
+        a:first-child,
+        a:last-child {
+            align-self: center;
+        }
+
+        .rest_bar {
+            width: 900px;
+            height: 100px;
+            position: relative;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var idx = 0;
+
+            var before = $('#before');
+            var after = $('#after');
+            var bar = $('.rest_bar');
+
+
+            before.click(function () {
+                if (idx == 0) return;
+                idx--;
+                bar.animate({
+                    'left': `-${idx * 100}px`,
+                }, 500);
+
+            });
+
+            after.click(function () {
+                if (idx == 4) return;
+                idx++;
+                bar.animate({
+                    'left': `-${idx * 100}px`,
+                }, 500);
+
+            });
+
+            $('.rest_bar img').click(function () {
+                $('.main_img').attr('src', $(this).attr('src'));
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="big_img">
+        <img src="img/1.jpg" class="main_img">
+    </div>
+    <div class="small_img_bar">
+        <a href="#" id="before"><img src="img/left_arrow.png" class="left_arrow"></a>
+        <div class="small_img_bar_rest">
+            <div class="rest_bar">
+                <a href="#"><img src="img/1.jpg"></a>
+                <a href="#"><img src="img/2.jpg"></a>
+                <a href="#"><img src="img/3.jpg"></a>
+                <a href="#"><img src="img/4.jpg"></a>
+                <a href="#"><img src="img/5.jpg"></a>
+                <a href="#"><img src="img/6.jpg"></a>
+                <a href="#"><img src="img/7.jpg"></a>
+                <a href="#"><img src="img/8.jpg"></a>
+                <a href="#"><img src="img/9.jpg"></a>
+            </div>
+        </div>
+        <a href="#" id="after"><img src="img/right_arrow.png" class="right_arrow"></a>
+    </div>
+</body>
+
+</html>

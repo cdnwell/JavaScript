@@ -14,15 +14,25 @@
             // 3. each() 함수로 함수 인자인 함수의 인자 수를 위 보다 하나 적게
             // 해서 동일한 string을 콘솔에 출력하라.
 
-            console.log($('li').length);
+            // console.log($('li').length);
 
-            $('li').each(function(i,obj){
-                console.log(`${i} - ${$(obj).html()}`);
-            });
+            // $('li').each(function(i,obj){
+            //     console.log(`${i} - ${$(obj).html()}`);
+            // });
 
-            $('li').each(function(i){
-                console.log(`${i} - ${$(this).html()}`);
+            // $('li').each(function(i){
+            //     console.log(`${i} - ${$(this).html()}`);
+            // });
+
+            console.log($('#ul1 li').length);
+
+            $('#ul1 li').each(function(i, obj){
+                console.log(`${i}`,`${$(obj).html()}`);
             });
+            $('#ul1 li').each(function(i){
+                console.log(`${i}`,`${$(this).html()}`);
+            })
+            // 람다식은 오류가 난다. 주의
         });
     </script>
 </head>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            margin: 100px;
+            border: 1px solid black;
+            transition-property: all;
+            transition-duration: 1s;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+
+            // $('#box1').mouseover(function () {
+            //     // 선택한 것의 함수소속 this -> box1
+            //     // this 쓰려면 화살표 함수는 쓰면 안된다.
+            //     // this는 화살표 함수 안 됨
+            //     $(this).css('background-color', 'red');
+            // });
+
+            // transparent : 투명
+            // none : 없음
+            // $('#box1').mouseout(function () {
+            //     $(this).css('background-color', 'transparent');
+            // });
+
+            // hover : hang over
+            // 첫번째 이벤트 마우스가 올라 갔을 때
+            // 두번째 이벤트 마우스가 나갔을 때
+            // this : 박스1 소속
+            // this : 현재 선택된 객체 자기 것
+            // 다른 언어에서도 동일한 의미로 쓰임, 같은 개념
+            $('#box1').hover(function () {
+                $(this).css('background-color', 'red');
+            }, function () {
+                $(this).css('background-color', 'transparent')
+            });
+
+            // box2, mouseenter,mouseleave - 둥근테두리 150px
+            $('#box2').mouseenter(function () {
+                $(this).css('border-radius', '150px');
+            });
+
+            $('#box2').mouseleave(function () {
+                $(this).css('border-radius', '0');
+            });
+
+            
+        });
+    </script>
+</head>
+
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+
+</html>

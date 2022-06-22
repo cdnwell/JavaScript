@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // setInterval 활용 예시
+            // 뉴스, 주기적으로 데이터 받아오기 활용 가능
+            // setInterval 함수는 아이디 값을 반환한다.
+            var inter_id1 = setInterval(function () {
+                console.log(`1초 마다 실행 - ${new Date().toLocaleString()}`);
+            }, 1000);
+            var inter_id2 = setInterval(function () {
+                console.log(`5초 마다 실행 - ${new Date().toLocaleString()}`);
+            }, 5000);
+
+            // 웹이 실행되고 3초 뒤에 한번 가상 함수를 실하고 끝낸다.
+            // 타임 아웃 활용 : 1. 몇 초 후에 메인 페이지로 이동합니다.
+            var timeout_id3 = setTimeout(() => {
+                console.log(`3초 Timeout 실행 - ${new Date().toLocaleString()}`);
+            }, 3000);
+            // 2,3,4 (1번 부터 시작 이지만, 1번은 이미 사용하고 있는 듯)
+            // timeout,interval 같이 관리, timeout도 clearout이 있다. 실행되기
+            // 전에 끝낼 수 있다.
+            console.log(inter_id1, inter_id2, timeout_id3);
+
+            // 멈추기
+            // setInterval, clearInterval 같이 기억하기
+            $('#inter').click(function () {
+                clearInterval(inter_id1);
+                clearInterval(inter_id2);
+            });
+
+            $('#out').click(function () {
+                clearTimeout(timeout_id3);
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <button id="inter">Interval Stop</button>
+    <button id="out">Timeout Stop</button>
+</body>
+
+</html>

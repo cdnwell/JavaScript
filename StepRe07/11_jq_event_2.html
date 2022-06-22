@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // 1. p태그에서 함수 하나를 사용하여 '클릭'했을 경우, '마우스가 나갔을 경우'
+            // container(id)의 html을 alert창으로 띄운다.
+            // 2. button을 클릭하면 p태그에서 '마우스가 나갔을 경우' alert 창을 띄우는
+            // 이벤트를 삭제한다.
+
+            $('p').on('click mouseout',function(){
+                alert($('#container').html());
+            });
+
+            $('button').click(function(){
+                $('p').off('mouseout');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <p>클릭이벤트</p>
+    </div>
+    <button>mouseout 이벤트 삭제</button>
+</body>
+
+</html>

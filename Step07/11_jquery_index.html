@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // 이전 방식의 window.onload
+        $(document).ready(function () {
+
+        });
+
+        $(function () {
+            // li 선택후 특정 li가 몇 번째 위치에 있는지 알아내기
+            // index() 몇 번째 있는지 찾겠다.
+            // 1. index() 값 = 2
+            var index = $('li').index($('#select'));
+            console.log(index);
+
+            // 2. 부모태그에 몇번째 위치에 속해 있는지 찾음
+            // 값 = 2
+            console.log($('#select').index());
+
+            // js onmouseover와 같다.
+            // 이벤트를 하나만 적용할 때 이렇게 씀
+            // 이벤트를 적용하는 다른 모양도 있다.
+            $('li').mouseover(function () {
+                // 현재 마우스 올라간 객체 = this
+                console.log(`${$(this).index()} - ${$(this).html()}`);
+            });
+        });
+        
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>메뉴1-1</li>
+        <li>메뉴1-2</li>
+        <li id="select">메뉴1-3</li>
+        <li>메뉴1-4</li>
+        <li>메뉴1-5</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .thumnail_container {
+            width: 500px;
+            text-align: center;
+            /* 화살표 때문에 relative */
+            position: relative;
+            margin: 60px auto;
+        }
+
+        .main_img {
+            width: 400px;
+            height: 400px;
+        }
+
+        .thumnail_bar {
+            width: 400px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .thumnail {
+            width: 720px;
+            height: 80px;
+            font-size: 0;
+        }
+
+        .thumnail img {
+            width: 80px;
+            height: 80px;
+
+        }
+
+        .left_arrow img,
+        .right_arrow img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .left_arrow {
+            left: 0px;
+            bottom: 15px;
+            position: absolute;
+        }
+
+        .right_arrow {
+            right: 0;
+            bottom: 15px;
+            position: absolute;
+        }
+
+        .opacity1 {
+            background-color: rgba(255, 255, 255, 1);
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function left_rotate() {
+            $('.thumnail > img:first').stop().animate({
+                'margin-left': '-160px'
+            }, 500, function () {
+                $(this).appendTo($('.thumnail')).css('margin-left', 0);
+                $('.thumnail > img:first').click();
+            });
+            clearInterval(interId);
+        }
+
+        $(function () {
+            // $(".right_arrow").click(function () {
+            //     $('.thumnail > img:last').css({ 'margin-left': '-160px' }).prependTo.$('.thumnail').css('margin-left', 0);
+
+            //     // $('.thumnail > img:last').stop().animate({
+            //     //     'margin-left': '-160px'
+            //     // }, 500, function () {
+            //     //     $(this).prependTo($('.thumnail')).css('margin-left', 0);
+            //     // });
+
+            // });
+
+            // var interId = setInterval(function () {
+            //     $('.thumnail > img:first').stop().animate({
+            //         'margin-left': '-160px'
+            //     }, 500, function () {
+            //         $(this).appendTo($('.thumnail')).css('margin-left', 0);
+            //     });
+            // }, 3000);
+
+            $(".right_arrow").click(function () {
+                $('.thumnail > img:last').css({ 'margin-left': '-160px' }).prependTo($('.thumnail')).animate({ 'margin-left': '0px' }, 500);
+                $('.thumnail > img:first').click();
+                clearInterval(auto_id);
+            });
+
+            $('.thumnail img').click(function () {
+                $('.main_img').attr('src', $(this).attr('src'));
+            });
+
+            $(".left_arrow").click(function () {
+                $('.thumnail > img:first').stop().animate({
+                    'margin-left': '-160px'
+                }, 500, function () {
+                    $(this).appendTo($('.thumnail')).css('margin-left', 0);
+                    $('.thumnail > img:first').click();
+                });
+                clearInterval(auto_id);
+            });
+
+            $('.thumnail img').click(function () {
+
+                $('.main_img').attr('src', $(this).attr('src'));
+                $('.thumnail img').not($(this)).css('opacity', 0.5);
+                $(this).css('opacity', 1);
+            });
+            $('.thumnail img').css('opacity', 0.5);
+            $('.thumnail img:first').css('opacity', 1);
+
+            var auto_id = setInterval(function () {
+                left_rotate();
+
+            }, 3000);
+        });
+    </script>
+</head>
+
+<body>
+    <div class="thumnail_container">
+        <img src="img/1.jpg" class="main_img">
+        <div class="thumnail_bar">
+            <div class="thumnail">
+                <img src="img/1.jpg">
+                <img src="img/2.jpg">
+                <img src="img/3.jpg">
+                <img src="img/4.jpg">
+                <img src="img/5.jpg">
+                <img src="img/6.jpg">
+                <img src="img/7.jpg">
+                <img src="img/8.jpg">
+                <img src="img/9.jpg">
+            </div>
+        </div>
+        <a href="#" class="left_arrow"><img src="img/left_arrow.png"></a>
+        <a href="#" class="right_arrow"><img src="img/right_arrow.png"></a>
+    </div>
+</body>
+
+</html>

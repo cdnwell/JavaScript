@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // jquery 함수 on, off
+            // click (String) 전달, 다음 매개변수 function(){} 가상클래스
+            // binding 함수
+            // 이벤트 동시에 넣기 가능, 똑같은 일을 하는 경우
+            $('p').on('click mouseout', function () {
+                alert($('#container').html());
+            });
+            // 버튼 클릭이벤트 작성
+            // 하나일 때만 이렇게 쓰고 여러개 일 때 on 쓰기
+            // 이벤트 바인딩
+            // 여러개 이벤트 지정할 때 씀
+            $('button').click(function () {
+                // 이벤트를 제거
+                $('p').off('mouseout');
+            });
+            // 이벤트 객체는 어디서 받아오는지
+
+          
+        });
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <p>클릭이벤트</p>
+    </div>
+    <button>mouseout 이벤트 삭제</button>
+</body>
+
+</html>

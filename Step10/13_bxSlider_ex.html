@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.bxslider').bxSlider({
+                mode: 'vertical',
+                // controls: false,
+                // autoControlsCombine: true,
+                // autoControls: true,
+                pager: false,
+
+            });
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bxslider img {
+            width: 100%;
+        }
+
+        .bx-wrapper {
+            border: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bxslider">
+        <div><img src="img/main_1.jpg" title="사진1"></div>
+        <div><img src="img/main_2.jpg" title="사진2"></div>
+        <div><img src="img/main_3.jpg" title="사진3"></div>
+        <div><img src="img/main_4.jpg" title="사진4"></div>
+    </div>
+</body>
+
+</html>

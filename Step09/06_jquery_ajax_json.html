@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var today = new Date();
+            $('#time').html(today.toLocaleString());
+            $('#btn').click(function () {
+                // ajax실행하는 함수 $.ajax()
+                var queryString = 'txt=' + $('#txt').val();
+                // 중요하기 때문에 모두 외워야 한다.
+                $.ajax({
+                    // url <- 요청할 서버 페이지
+                    url: 'http://nam2626.dothome.co.kr/papago.php',
+                    data: queryString,
+                    // jquery 1.0x 때 method라고 썼다.
+                    // jquery 3.0x 때는 method 대신 type을 씀
+                    type: 'get',
+                    // dataType json을 지정하면 아래 함수에서 result 값을 json으로 바꿀 필요가 없다.
+                    dataType: 'json',
+                    // success 성공했을 때 처리할 함수
+                    // result에 서버가 echo해서 클라이언트에게 보내줌 그 결과를 result로 받아옴
+                    success: function (result) {
+                        // console.log(result);
+                        // // JSON.parse(result) <- result를 JSON 객체로 바꾼다.
+                        // r = JSON.parse(result);
+                        // console.log(r);
+                        // $("#view").html(r.message.result.translatedText);
+                        // 에러 처리도 success에서 다 처리 할 수 있다.
+                        $("#view").html(result.message.result.translatedText);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="time"></div>
+    <!--실제 웹페이지가 로드된 시간-->
+    <textarea id="txt"></textarea><br>
+    <button id="btn">버튼</button>
+    <div id="view"></div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQueryUI</title>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/jquery-ui.js"></script>
+    <link rel="stylesheet" href="lib/jquery-ui.css">
+    <link rel="stylesheet" href="lib/jquery-ui.theme.css">
+    <!-- bxslider css,js파일 cdn 임포트 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <script>
+        $(function () {
+            $('.bxslider').bxSlider({
+                auto: true,
+                autoControls: true,
+                stopAutoOnClick: true,
+                pager: true,
+                slideWidth: 600,
+                captions: true,
+                mode: 'vertical'
+
+            });
+        });
+    </script>
+    <style>
+        .bxslider img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bxslider">
+        <div><img src="img/main_1.jpg" title="사진1"></div>
+        <div><img src="img/main_2.jpg" title="사진2"></div>
+        <div><img src="img/main_3.jpg" title="사진3"></div>
+        <div><img src="img/main_4.jpg" title="사진4"></div>
+    </div>
+</body>
+
+</html>

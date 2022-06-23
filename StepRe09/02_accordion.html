@@ -7,69 +7,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
+        *{
             margin: 0;
             padding: 0;
         }
-
-        #accodion {
-            width: 600px;
-            border: 1px solid black;
+        #accordion{
+            width: 400px;
+            margin: 0 auto;
+            border: 1px solid #b7b7b7;
             border-radius: 5px;
-            margin: 60px auto;
-            padding: 5px;
         }
-
-        h2 {
-            background-color: #d9d9d9;
-            font-size: 16px;
-            /* height로 값을 주면 대칭의 여백이 생기지 않고 위에 붙음 */
-            padding: 5px 20px;
-        }
-
-        h2:hover {
-            background-color: #c9c9c9;
-        }
-
-        p {
-            padding: 0 20px;
-            border: 1px solid #e9e9e9;
-            display: none;
-        }
-
-        .select {
-            background-color: #b9b9b9;
+        .select{
+            background-color: #979797;
             color: white;
         }
-
-        .active {
-            display: block;
+        p{
+            padding: 2px;
+            padding-left:5px;
+            display: none;
+        }
+        h2{
+            background-color: #b7b7b7;
+            margin: 5px;
+            font-size: 16px;
+            padding: 2px;
+            padding-left: 5px;
+            border-radius: 3px;
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(function () {
-            $('h2').click(function () {
-                // 클릭된 h2 select 클래스 적용 다음 p 태그 보여줌
+
+            $('h2').click(function(){
+                if(thisBox[0]==$(this)[0]){
+                    $(this).removeClass('select').next().slideUp(500);
+                }
                 $(this).addClass('select').next().slideDown(500);
-
-                // 클릭이 안된 나머지는 숨김 및 select 클래스를 제거
-                // not() 선택된 것 중에서 특정한 것 하나를 제외한 나머지
-                $('#accodion h2').not($(this)).removeClass('select').next().slideUp(500);
-
-                // $('#accodion p').slideUp(500);
-                // $('#accodion h2').removeClass('select');
-                // $(this).addClass('select');
-                // $(this).next().slideDown(500);
+                $('h2').not($(this)).removeClass('select').next().slideUp(500);
+                var thisBox = $(this);
             });
-
-
         });
     </script>
 </head>
 
 <body>
-    <div id="accodion">
+    <div id="accordion">
         <h2>헌법재판소의 장은 국회의 동의....</h2>
         <p>헌법재판소의 장은 국회의 동의를 얻어 재판관중에서 대통령이 임명한다. 모든 국민은 직업선택의 자유를 가진다. 새로운 회계연도가 개시될 때까지 예산안이 의결되지 못한
             때에는

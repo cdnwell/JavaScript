@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bxSlider</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .thumnail_container {
+            width: 500px;
+            text-align: center;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .main_img {
+            width: 400px;
+            height: 400px;
+        }
+
+        .bxslider img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .bx-wrapper .bx-prev {
+            left: -30px
+        }
+
+        .bx-wrapper .bx-next {
+            right: -42px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('.bxslider').bxSlider({
+                pager: false,
+                slideWidth: 100,
+                // minSlides: 1,
+                maxSlides: 9,
+                moveSlides: 1
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="thumnail_container">
+        <img src="img/1.jpg" class="main_img" />
+        <div class="bxslider">
+            <div><img src="img/1.jpg" alt="" /></div>
+            <div><img src="img/2.jpg" alt="" /></div>
+            <div><img src="img/3.jpg" alt="" /></div>
+            <div><img src="img/4.jpg" alt="" /></div>
+            <div><img src="img/5.jpg" alt="" /></div>
+            <div><img src="img/6.jpg" alt="" /></div>
+            <div><img src="img/7.jpg" alt="" /></div>
+            <div><img src="img/8.jpg" alt="" /></div>
+            <div><img src="img/9.jpg" alt="" /></div>
+        </div>
+    </div>
+</body>
+
+</html>

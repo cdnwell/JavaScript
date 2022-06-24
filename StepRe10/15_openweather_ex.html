@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var id = '1897122';
+            var apikey = 'cb9ff9ef1004eaeeef7a70d436d28bcb';
+            $('button').click(function () {
+                $.ajax({
+                    url: `https://api.openweathermap.org/data/2.5/weather?id=${id}&appid=${apikey}`,
+                    type: 'get',
+                    dataType: 'json',
+                    success: function (result) {
+                        console.log(JSON.stringify(result));
+                        var res = $('#result');
+                        var curTemp = result.main.temp - 273.15;
+                        res.append(`<div>도시 : ${result.name}</div>`);
+                        res.append(`<div>현재 날씨 : ${result.weather[0].main}</div>`);
+                        res.append(`<div>현재 온도 : ${curTemp.toFixed(2)}℃</div>`);
+                        res.append(`<div>바람 세기 : ${result.wind.speed}m/s</div>`);
+
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <button>날씨정보요청</button>
+    <div id="result"></div>
+</body>
+
+</html>

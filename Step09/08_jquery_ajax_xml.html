@@ -10,7 +10,7 @@
     <script>
         $(function () {
             var today = new Date();
-            $('#time').html(today.toLocaleString());
+            $('#time').html(new Date().toLocaleString());
             $('#btn').click(function () {
                 $.ajax({
                     url: 'http://nam2626.dothome.co.kr/ajax_xml.php',
